@@ -14,6 +14,9 @@ import { ProgressBarCategoryComponent } from './components/progress-bar-category
 import { TransactionItemComponent } from './components/transaction-item/transaction-item.component';
 import { AmountDisplayComponent } from './components/amount-display/amount-display.component';
 import { EmptyStateComponent } from './components/empty-state/empty-state.component';
+import { CurrencyFormatPipe } from './pipes/currency-format-pipe';
+import { CategoryIconPipe } from './pipes/category-icon-pipe';
+import { CategoryColorPipe } from './pipes/category-color-pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { EmptyStateComponent } from './components/empty-state/empty-state.compon
     TransactionItemComponent,
     AmountDisplayComponent,
     EmptyStateComponent,
+    CurrencyFormatPipe,
+    CategoryIconPipe,
+    CategoryColorPipe,
   ],
   imports: [
     CommonModule,
@@ -50,7 +56,10 @@ import { EmptyStateComponent } from './components/empty-state/empty-state.compon
     ProgressBarCategoryComponent,
     TransactionItemComponent,
     AmountDisplayComponent,
-    EmptyStateComponent
+    EmptyStateComponent,
+    CurrencyFormatPipe,
+    CategoryIconPipe,
+    CategoryColorPipe,
   ]
 })
 export class SharedModule {}

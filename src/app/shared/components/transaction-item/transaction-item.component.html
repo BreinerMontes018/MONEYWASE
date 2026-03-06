@@ -4,9 +4,8 @@
   <ion-avatar slot="start">
 
     <ion-icon
-      [name]="getIcono()"
-      [color]="getColor()"
-      size="large">
+      [name]="transaccion.categoria | categoryIcon"
+      [color]="transaccion.categoria | categoryColor">
     </ion-icon>
 
   </ion-avatar>

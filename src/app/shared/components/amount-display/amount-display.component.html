@@ -9,7 +9,7 @@
 
   <span [ngClass]="tamano">
 
-    {{ tipo === 'Gasto' ? '-' : '+' }}${{ monto }}
+    {{ tipo === 'Gasto' ? '-' : '+' }}{{ monto || 0 | currencyFormat }}
 
   </span>
 

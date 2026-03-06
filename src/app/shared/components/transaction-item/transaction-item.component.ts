@@ -18,24 +18,4 @@ export class TransactionItemComponent {
     this.clickItem.emit(this.transaccion.id);
   }
 
-  getCategoriaInfo(nombre: string){
-    return CATEGORIAS.find(c => c.nombre === nombre);
-  }
-  
-  getIcono(){
-
-  const cat = this.getCategoriaInfo(this.transaccion.categoria);
-
-  return cat?.icono || 'pricetag';
-
-}
-
-getColor(){
-
-  const cat = this.getCategoriaInfo(this.transaccion.categoria);
-
-  return cat?.color || 'medium';
-
-}
-
 }
