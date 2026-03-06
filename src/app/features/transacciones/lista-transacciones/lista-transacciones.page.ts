@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { TipoTransaccion } from 'src/app/core/constants/tipos-transaccion';
 import { Categoria } from 'src/app/core/models/categoria';
 import { Transaccion } from 'src/app/core/models/transaccion';
+import { AuthService } from 'src/app/core/services/auth';
+import { ToastService } from 'src/app/core/services/toast';
 import { TransaccionService } from 'src/app/core/services/transaccion';
 import { TransactionFormComponent } from 'src/app/shared/components/transaction-form/transaction-form.component';
 
@@ -18,14 +20,17 @@ export class ListaTransaccionesPage implements OnInit {
 
   transacciones$: Observable<Transaccion[]>;
 
-tipoFiltro: TipoTransaccion | 'todos' = 'todos';
-categoriaFiltro: Categoria['nombre'] | 'todas' = 'todas';
-textoBusqueda = '';
+  tipoFiltro: TipoTransaccion | 'todos' = 'todos';
+  categoriaFiltro: Categoria['nombre'] | 'todas' = 'todas';
+  textoBusqueda = '';
 
   constructor(
     private transaccionService: TransaccionService,
     private modalCtrl: ModalController,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
+    private toast: ToastService,
+    private alertCtrl: AlertController
   ) {
     this.transacciones$ = this.transaccionService.transacciones$;
   }
@@ -44,6 +49,38 @@ textoBusqueda = '';
   abrirDetalle(id: string){
 
   this.router.navigate(['/tabs/transacciones/detalle', id]);
+
+}
+
+  async logout(){
+
+  const alert = await this.alertCtrl.create({
+
+    header: 'Cerrar sesión',
+
+    message: '¿Seguro que deseas cerrar sesión?',
+
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel'
+      },
+      {
+        text: 'Salir',
+        role: 'destructive',
+        handler: () => {
+
+          this.authService.logout();
+          this.toast.show('Sesión cerrada', 'medium');
+          this.router.navigateByUrl('/auth/login', { replaceUrl: true });
+
+        }
+      }
+    ]
+
+  });
+
+  await alert.present();
 
 }
 

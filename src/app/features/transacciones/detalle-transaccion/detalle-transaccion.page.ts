@@ -118,4 +118,10 @@ async abrirFoto(){
 
 }
 
+volver(){
+
+  this.router.navigate(['/tabs/transacciones']);
+
+}
+
 }

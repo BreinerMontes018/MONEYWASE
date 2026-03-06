@@ -55,4 +55,8 @@ export class RegisterPage {
 
 }
 
+volverLogin(){
+  this.router.navigate(['/auth/login']);
+}
+
 }
