@@ -18,10 +18,9 @@ export class TransactionFormComponent implements OnInit {
   @Input() transaccion?: Transaccion;
 
   form: FormGroup;
-
   categorias = CATEGORIAS;
   tipos = TIPOS_TRANSACCION;
-
+  categoriasNombres: string[] = [];
   foto: string | null = null;
 
   constructor(
@@ -48,6 +47,8 @@ export class TransactionFormComponent implements OnInit {
   }
 
   ngOnInit(){
+
+    this.categoriasNombres = this.categorias.map(c => c.nombre);
 
     if(this.transaccion){
 

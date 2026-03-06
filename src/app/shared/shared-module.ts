@@ -23,6 +23,9 @@ import { CategoryIconComponent } from './components/category-icon/category-icon.
 import { CategoryBadgeComponent } from './components/category-badge/category-badge.component';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
 import { PhotoGalleryModalComponent } from './components/photo-gallery-modal/photo-gallery-modal.component';
+import { DateFieldComponent } from './components/date-field/date-field.component';
+import { SelectFieldComponent } from './components/select-field/select-field.component';
+import { InputFieldComponent } from './components/input-field/input-field.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { PhotoGalleryModalComponent } from './components/photo-gallery-modal/pho
     CategoryIconComponent,
     PhotoPreviewComponent,
     PhotoGalleryModalComponent,
+    InputFieldComponent,
+    SelectFieldComponent,
+    DateFieldComponent,
 
   ],
   imports: [
@@ -79,6 +85,9 @@ import { PhotoGalleryModalComponent } from './components/photo-gallery-modal/pho
     CategoryIconComponent,
     PhotoPreviewComponent,
     PhotoGalleryModalComponent,
+    InputFieldComponent,
+    SelectFieldComponent,
+    DateFieldComponent,
   ]
 })
 export class SharedModule {}

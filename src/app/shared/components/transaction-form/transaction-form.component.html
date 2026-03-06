@@ -26,39 +26,28 @@
 </ion-segment>
 
 <!-- Categoría -->
-<ion-item>
-  <ion-label position="floating">Categoría</ion-label>
+<app-select-field
+label="Categoría"
+[options]="categoriasNombres"
+[value]="form.get('categoria')?.value"
+(valueChange)="form.get('categoria')?.setValue($event)">
+</app-select-field>
 
-  <ion-select formControlName="categoria">
-
-  <ion-select-option
-    *ngFor="let c of categorias"
-    [value]="c.nombre">
-
-    {{ c.nombre }}
-
-  </ion-select-option>
-
-</ion-select>
-</ion-item>
 
 <!-- Monto -->
-<ion-item>
-  <ion-label position="floating">Monto</ion-label>
-  <ion-input
-    type="number"
-    formControlName="monto">
-  </ion-input>
-</ion-item>
+<app-input-field
+label="Monto"
+type="number"
+[value]="form.get('monto')?.value"
+(valueChange)="form.get('monto')?.setValue($event)">
+</app-input-field>
 
 <!-- Fecha -->
-<ion-item>
-  <ion-label>Fecha</ion-label>
-  <ion-datetime
-    presentation="date"
-    formControlName="fecha">
-  </ion-datetime>
-</ion-item>
+<app-date-field
+label="Fecha"
+[value]="form.get('fecha')?.value"
+(valueChange)="form.get('fecha')?.setValue($event)">
+</app-date-field>
 
 <!-- Descripción -->
 <ion-item>
