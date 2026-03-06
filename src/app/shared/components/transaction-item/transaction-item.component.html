@@ -16,14 +16,15 @@
 
   </ion-label>
 
-  <app-photo-preview 
-  *ngIf="transaccion.foto" 
-  [src]="transaccion.foto" 
-  size="small">
-  </app-photo-preview>
-
   <!-- Monto -->
   <app-amount-display [monto]="transaccion.monto" [tipo]="transaccion.tipo" tamano="small">
   </app-amount-display>
+
+  <app-photo-preview 
+  *ngIf="transaccion.foto" 
+  [src]="transaccion.foto" 
+  size="small",
+  slot="end">
+  </app-photo-preview>
 
 </ion-item>

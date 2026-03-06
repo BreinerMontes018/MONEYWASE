@@ -5,6 +5,7 @@ import { Transaccion } from 'src/app/core/models/transaccion';
 import { AlertController, ModalController } from '@ionic/angular';
 import { TransactionFormComponent } from 'src/app/shared/components/transaction-form/transaction-form.component';
 import { ToastService } from 'src/app/core/services/toast';
+import { PhotoGalleryModalComponent } from 'src/app/shared/components/photo-gallery-modal/photo-gallery-modal.component';
 
 @Component({
   selector: 'app-detalle-transaccion',
@@ -95,6 +96,25 @@ export class DetalleTransaccionPage implements OnInit {
   if(role === 'confirm'){
     this.router.navigate(['/tabs/transacciones']);
   }
+
+}
+
+async abrirFoto(){
+
+  if(!this.transaccion?.foto) return;
+
+  const modal = await this.modalCtrl.create({
+
+    component: PhotoGalleryModalComponent,
+
+    componentProps:{
+      fotos:[this.transaccion.foto],
+      fotoInicial:0
+    }
+
+  });
+
+  await modal.present();
 
 }
 

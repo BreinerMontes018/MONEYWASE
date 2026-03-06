@@ -22,6 +22,7 @@ import { MonthNamePipe } from './pipes/month-name-pipe';
 import { CategoryIconComponent } from './components/category-icon/category-icon.component';
 import { CategoryBadgeComponent } from './components/category-badge/category-badge.component';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
+import { PhotoGalleryModalComponent } from './components/photo-gallery-modal/photo-gallery-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
     CategoryBadgeComponent,
     CategoryIconComponent,
     PhotoPreviewComponent,
+    PhotoGalleryModalComponent,
 
   ],
   imports: [
@@ -75,7 +77,8 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
     MonthNamePipe,
     CategoryBadgeComponent,
     CategoryIconComponent,
-    PhotoPreviewComponent
+    PhotoPreviewComponent,
+    PhotoGalleryModalComponent,
   ]
 })
 export class SharedModule {}
