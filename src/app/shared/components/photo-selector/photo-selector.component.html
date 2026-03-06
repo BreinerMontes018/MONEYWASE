@@ -1,0 +1,29 @@
+<ion-card>
+
+<ion-card-header>
+  <ion-card-title>Comprobante</ion-card-title>
+</ion-card-header>
+
+<ion-card-content>
+
+<div *ngIf="foto">
+
+  <img [src]="foto" style="width:100%; border-radius:10px; margin-bottom:10px"/>
+
+</div>
+
+<ion-button expand="block" (click)="tomarFoto()">
+📷 Tomar Foto
+</ion-button>
+
+<ion-button expand="block" fill="outline" (click)="galeria()">
+🖼 Seleccionar de Galería
+</ion-button>
+
+<ion-button *ngIf="foto" expand="block" color="danger" (click)="eliminar()">
+Eliminar Foto
+</ion-button>
+
+</ion-card-content>
+
+</ion-card>

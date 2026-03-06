@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transacciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Barra de filtros -->
+
+  <app-filter-bar (tipoChange)="tipoFiltro = $any($event)" (categoriaChange)="categoriaFiltro = $any($event)"
+    (buscarChange)="textoBusqueda = $any($event)">
+  </app-filter-bar>
+
+  <!-- Lista -->
+
+  <ion-list *ngIf="(transacciones$ | async) as transacciones">
+
+    <app-transaction-item *ngFor="
+  let t of transacciones
+  | filterByType:tipoFiltro
+  | filterByCategory:categoriaFiltro
+  | searchByText:textoBusqueda
+  " [transaccion]="t" (clickItem)="abrirDetalle($event)">
+    </app-transaction-item>
+
+  </ion-list>
+
+  <app-empty-state
+*ngIf="(transacciones$ | async)?.length === 0"
+icon="wallet"
+message="No tienes transacciones aún">
+</app-empty-state>
+
+  <!-- Botón agregar -->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="abrirFormulario()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

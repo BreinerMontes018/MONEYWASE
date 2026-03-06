@@ -1,0 +1,24 @@
+<ion-item lines="none">
+
+  <ion-label>
+
+    <div class="categoria-header">
+
+      <ion-text>
+        <strong>{{ categoria }}</strong>
+      </ion-text>
+
+      <ion-text color="medium">
+        ${{ monto }}
+      </ion-text>
+
+    </div>
+
+    <ion-progress-bar
+      [value]="porcentaje"
+      [color]="color">
+    </ion-progress-bar>
+
+  </ion-label>
+
+</ion-item>

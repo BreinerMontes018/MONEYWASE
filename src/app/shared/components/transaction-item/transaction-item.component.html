@@ -1,0 +1,47 @@
+<ion-item (click)="onClick()">
+
+  <!-- Icono -->
+  <ion-avatar slot="start">
+
+    <ion-icon
+      [name]="getIcono()"
+      [color]="getColor()"
+      size="large">
+    </ion-icon>
+
+  </ion-avatar>
+
+
+  <!-- Información -->
+
+  <ion-label>
+
+    <h2>{{ transaccion.categoria }}</h2>
+
+    <p>{{ transaccion.descripcion || 'Sin descripción' }}</p>
+
+    <p>{{ transaccion.fecha | date:'mediumDate' }}</p>
+
+  </ion-label>
+
+
+  <!-- Foto comprobante -->
+
+  <ion-thumbnail
+    *ngIf="transaccion.foto"
+    slot="end">
+
+    <img [src]="transaccion.foto">
+
+  </ion-thumbnail>
+
+
+  <!-- Monto -->
+
+ <app-amount-display
+[monto]="transaccion.monto"
+[tipo]="transaccion.tipo"
+tamano="small">
+</app-amount-display>
+
+</ion-item>

@@ -1,0 +1,31 @@
+<ion-card>
+
+  <ion-card-header>
+
+    <ion-item lines="none" class="card-header">
+
+      <ion-icon
+        [name]="icono"
+        slot="start"
+        size="large">
+      </ion-icon>
+
+      <ion-label>
+        <h2>{{ titulo }}</h2>
+      </ion-label>
+
+    </ion-item>
+
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <app-amount-display
+      [monto]="monto"
+      [tipo]="tipo"
+      tamano="large">
+    </app-amount-display>
+
+  </ion-card-content>
+
+</ion-card>

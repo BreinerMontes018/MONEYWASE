@@ -1,0 +1,45 @@
+<ion-item>
+
+  <ion-segment (ionChange)="tipoChange.emit($any($event.detail.value))">
+
+    <ion-segment-button value="todos">
+      Todos
+    </ion-segment-button>
+    <ion-segment-button
+  *ngFor="let t of tipos"
+  [value]="t">
+
+  {{ t | titlecase }}
+
+</ion-segment-button>
+
+  </ion-segment>
+
+</ion-item>
+
+<ion-item>
+
+  <ion-select
+    placeholder="Categoría"
+    (ionChange)="categoriaChange.emit($any($event.detail.value))">
+
+    <ion-select-option value="todas">
+      Todas
+    </ion-select-option>
+
+    <ion-select-option
+      *ngFor="let c of categorias"
+      [value]="c.nombre">
+
+      {{ c.nombre }}
+
+    </ion-select-option>
+
+  </ion-select>
+
+</ion-item>
+
+<ion-searchbar
+  placeholder="Buscar..."
+  (ionInput)="buscarChange.emit($any($event.target.value))">
+</ion-searchbar>
