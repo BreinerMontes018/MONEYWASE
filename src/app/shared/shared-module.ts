@@ -17,6 +17,8 @@ import { EmptyStateComponent } from './components/empty-state/empty-state.compon
 import { CurrencyFormatPipe } from './pipes/currency-format-pipe';
 import { CategoryIconPipe } from './pipes/category-icon-pipe';
 import { CategoryColorPipe } from './pipes/category-color-pipe';
+import { DateFormatPipe } from './pipes/date-format-pipe';
+import { MonthNamePipe } from './pipes/month-name-pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { CategoryColorPipe } from './pipes/category-color-pipe';
     CurrencyFormatPipe,
     CategoryIconPipe,
     CategoryColorPipe,
+    DateFormatPipe,
+    MonthNamePipe,
   ],
   imports: [
     CommonModule,
@@ -60,6 +64,8 @@ import { CategoryColorPipe } from './pipes/category-color-pipe';
     CurrencyFormatPipe,
     CategoryIconPipe,
     CategoryColorPipe,
+    DateFormatPipe,
+    MonthNamePipe,
   ]
 })
 export class SharedModule {}
