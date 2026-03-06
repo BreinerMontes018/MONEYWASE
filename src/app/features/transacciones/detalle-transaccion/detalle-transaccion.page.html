@@ -46,7 +46,10 @@ ${{ transaccion.monto }}
 
 <ion-card *ngIf="transaccion.foto">
 
-<img [src]="transaccion.foto">
+<app-photo-preview
+[src]="transaccion.foto"
+size="large">
+</app-photo-preview>
 
 </ion-card>
 

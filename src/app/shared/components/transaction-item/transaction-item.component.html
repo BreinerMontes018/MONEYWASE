@@ -1,21 +1,14 @@
 <ion-item (click)="onClick()">
 
   <!-- Icono -->
-  <ion-avatar slot="start">
-
-    <ion-icon
-      [name]="transaccion.categoria | categoryIcon"
-      [color]="transaccion.categoria | categoryColor">
-    </ion-icon>
-
-  </ion-avatar>
-
+  <app-category-icon slot="start" [categoria]="transaccion.categoria" tamaño="small">
+  </app-category-icon>
 
   <!-- Información -->
-
   <ion-label>
 
-    <h2>{{ transaccion.categoria }}</h2>
+    <app-category-badge [categoria]="transaccion.categoria">
+    </app-category-badge>
 
     <p>{{ transaccion.descripcion || 'Sin descripción' }}</p>
 
@@ -23,24 +16,14 @@
 
   </ion-label>
 
-
-  <!-- Foto comprobante -->
-
-  <ion-thumbnail
-    *ngIf="transaccion.foto"
-    slot="end">
-
-    <img [src]="transaccion.foto">
-
-  </ion-thumbnail>
-
+  <app-photo-preview 
+  *ngIf="transaccion.foto" 
+  [src]="transaccion.foto" 
+  size="small">
+  </app-photo-preview>
 
   <!-- Monto -->
-
- <app-amount-display
-[monto]="transaccion.monto"
-[tipo]="transaccion.tipo"
-tamano="small">
-</app-amount-display>
+  <app-amount-display [monto]="transaccion.monto" [tipo]="transaccion.tipo" tamano="small">
+  </app-amount-display>
 
 </ion-item>

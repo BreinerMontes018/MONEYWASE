@@ -1,0 +1,11 @@
+<ion-avatar
+[class.small]="tamano==='small'"
+[class.medium]="tamano==='medium'"
+[ngStyle]="{'background': 'var(--ion-color-' + (categoria | categoryColor) + ')'}">
+
+<ion-icon
+[name]="categoria | categoryIcon"
+color="light">
+</ion-icon>
+
+</ion-avatar>
