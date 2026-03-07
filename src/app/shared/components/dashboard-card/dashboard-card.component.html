@@ -1,24 +1,22 @@
-<ion-card>
+<ion-card class="dashboard-card">
 
-  <ion-card-header>
+  <div class="card-top">
 
-    <ion-item lines="none" class="card-header">
+    <div class="icon-box">
 
       <ion-icon
-        [name]="icono"
-        slot="start"
-        size="large">
+        [name]="icono">
       </ion-icon>
 
-      <ion-label>
-        <h2>{{ titulo }}</h2>
-      </ion-label>
+    </div>
 
-    </ion-item>
+    <span class="card-title">
+      {{ titulo }}
+    </span>
 
-  </ion-card-header>
+  </div>
 
-  <ion-card-content>
+  <div class="card-amount">
 
     <app-amount-display
       [monto]="monto"
@@ -26,6 +24,6 @@
       tamano="large">
     </app-amount-display>
 
-  </ion-card-content>
+  </div>
 
 </ion-card>
