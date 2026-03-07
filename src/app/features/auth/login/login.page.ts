@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth';
+import { ToastService } from 'src/app/core/services/toast';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +17,13 @@ export class LoginPage {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ){
 
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
 
   }
@@ -32,12 +34,11 @@ export class LoginPage {
     const {email, password} = this.form.value;
     const success = this.authService.login(email, password);
     if(success){
-
       this.router.navigate(['/tabs/dashboard'], { replaceUrl: true });
 
     }else{
 
-      alert('Credenciales incorrectas');
+      this.toastService.show('Credenciales incorrectas', 'danger');
 
     }
 

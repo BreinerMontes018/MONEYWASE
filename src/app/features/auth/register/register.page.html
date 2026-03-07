@@ -57,7 +57,8 @@
       <ion-button
       expand="block"
       class="register-button"
-      (click)="register()">
+      (click)="register()"
+      [disabled]="form.invalid">
 
       Create Account
 

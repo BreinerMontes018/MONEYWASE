@@ -40,7 +40,8 @@
       <ion-button
       expand="block"
       class="login-button"
-      (click)="login()">
+      (click)="login()"
+      [disabled]="form.invalid">
 
       Sign in
 

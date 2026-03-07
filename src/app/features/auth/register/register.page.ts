@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth';
+import { ToastService } from 'src/app/core/services/toast';
 
 @Component({
   selector: 'app-register',
@@ -16,18 +17,19 @@ export class RegisterPage {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ){
 
     this.form = this.fb.group({
 
-      nombre: ['', Validators.required],
+  nombre: ['', Validators.required],
 
-      email: ['', [Validators.required, Validators.email]],
+  email: ['', [Validators.required, Validators.email]],
 
-      password: ['', Validators.required]
+  password: ['', [Validators.required, Validators.minLength(8)]]
 
-    });
+});
 
   }
 
@@ -50,7 +52,7 @@ export class RegisterPage {
   if(success){
     this.router.navigate(['/tabs/dashboard']);
   }else{
-    alert("El usuario ya existe");
+    this.toastService.show('El usuario ya existe', 'danger');
   }
 
 }
