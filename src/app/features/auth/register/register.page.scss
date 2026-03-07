@@ -1,0 +1,97 @@
+.register-page{
+
+  --background:#F8EDFB;
+
+}
+
+.back-button{
+
+  position:absolute;
+  top:10px;
+  left:10px;
+
+}
+
+.register-container{
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+  padding:20px;
+
+}
+
+.register-image{
+
+  width:200px;
+  margin-bottom:15px;
+
+}
+
+h1{
+
+  font-size:26px;
+  font-weight:700;
+
+}
+
+.subtitle{
+
+  color:#666;
+  margin-bottom:20px;
+
+}
+
+.input-group{
+
+  display:flex;
+  align-items:center;
+
+  background:#ffffff;
+
+  border-radius:25px;
+
+  padding:10px 15px;
+
+  margin-bottom:15px;
+
+  width:100%;
+
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+
+}
+
+.input-group ion-icon{
+
+  margin-right:10px;
+
+  color:#7A3A8E;
+
+}
+
+.register-button{
+
+  --border-radius:25px;
+
+  height:45px;
+
+  margin-top:10px;
+
+}
+
+.login-link{
+
+  margin-top:15px;
+
+  color:#666;
+
+}
+
+.login-link span{
+
+  color:#7A3A8E;
+  font-weight:600;
+
+}

@@ -20,11 +20,8 @@ export class LoginPage {
   ){
 
     this.form = this.fb.group({
-
       email: ['', [Validators.required, Validators.email]],
-
       password: ['', Validators.required]
-
     });
 
   }
@@ -32,11 +29,8 @@ export class LoginPage {
   login(){
 
     if(this.form.invalid) return;
-
     const {email, password} = this.form.value;
-
     const success = this.authService.login(email, password);
-
     if(success){
 
       this.router.navigate(['/tabs/dashboard'], { replaceUrl: true });
@@ -47,6 +41,11 @@ export class LoginPage {
 
     }
 
+  }
+
+  irRegistro(){
+
+    this.router.navigate(['/auth/register']);
   }
 
 }

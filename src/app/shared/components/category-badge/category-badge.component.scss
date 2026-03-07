@@ -1,7 +1,9 @@
-ion-badge{
-color: White;
-display:flex;
-align-items:center;
-gap:5px;
-font-size:0.9rem;
+.category-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+
 }

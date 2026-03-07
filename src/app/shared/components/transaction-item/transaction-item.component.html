@@ -1,13 +1,17 @@
-<ion-item (click)="onClick()">
+<ion-item lines="none" class="transaction-item" (click)="onClick()">
 
   <!-- Icono -->
-  <app-category-icon slot="start" [categoria]="transaccion.categoria" tamaño="small">
+  <app-category-icon
+    slot="start"
+    [categoria]="transaccion.categoria"
+    tamaño="small">
   </app-category-icon>
 
   <!-- Información -->
   <ion-label>
 
-    <app-category-badge [categoria]="transaccion.categoria">
+    <app-category-badge
+      [categoria]="transaccion.categoria">
     </app-category-badge>
 
     <p>{{ transaccion.descripcion || 'Sin descripción' }}</p>
@@ -16,15 +20,19 @@
 
   </ion-label>
 
-  <!-- Monto -->
-  <app-amount-display [monto]="transaccion.monto" [tipo]="transaccion.tipo" tamano="small">
-  </app-amount-display>
-
-  <app-photo-preview 
-  *ngIf="transaccion.foto" 
-  [src]="transaccion.foto" 
-  size="small",
-  slot="end">
+  <!-- Foto -->
+  <app-photo-preview
+    *ngIf="transaccion.foto"
+    [src]="transaccion.foto"
+    size="small"
+    slot="end">
   </app-photo-preview>
+
+  <!-- Monto -->
+  <app-amount-display
+    [monto]="transaccion.monto"
+    [tipo]="transaccion.tipo"
+    tamano="small">
+  </app-amount-display>
 
 </ion-item>
