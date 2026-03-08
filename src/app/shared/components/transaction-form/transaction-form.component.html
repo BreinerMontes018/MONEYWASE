@@ -7,7 +7,7 @@
       </ion-button>
 
     </ion-buttons>
-    <ion-title>Nueva Transacción</ion-title>
+    <ion-title class="title-transaccion">Transacción</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -51,6 +51,7 @@ label="Categoría"
 <app-input-field
 label="Monto"
 type="number"
+pattern="[0-9]*"
 [value]="form.get('monto')?.value"
 (valueChange)="form.get('monto')?.setValue($event)">
 </app-input-field>
@@ -107,7 +108,8 @@ placeholder="Agregar descripción...">
 <ion-button
 expand="block"
 class="save-button"
-(click)="guardar()">
+(click)="guardar()"
+[disabled]="form.invalid">
 
 Guardar Transacción
 

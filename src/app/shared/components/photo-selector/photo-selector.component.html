@@ -1,29 +1,66 @@
-<ion-card>
+<ion-card class="photo-card">
 
-<ion-card-header>
-  <ion-card-title>Comprobante</ion-card-title>
-</ion-card-header>
+  <ion-card-header>
 
-<ion-card-content>
+    <ion-card-title class="photo-title">
 
-<div *ngIf="foto">
+      <ion-icon name="camera-outline"></ion-icon>
+      Comprobante
 
-  <img [src]="foto" style="width:100%; border-radius:10px; margin-bottom:10px"/>
+    </ion-card-title>
 
-</div>
+  </ion-card-header>
 
-<ion-button expand="block" (click)="tomarFoto()">
-📷 Tomar Foto
-</ion-button>
 
-<ion-button expand="block" fill="outline" (click)="galeria()">
-🖼 Seleccionar de Galería
-</ion-button>
+  <ion-card-content>
 
-<ion-button *ngIf="foto" expand="block" color="danger" (click)="eliminar()">
-Eliminar Foto
-</ion-button>
+    <div class="photo-preview" *ngIf="foto">
 
-</ion-card-content>
+      <img [src]="foto">
+
+    </div>
+
+    <div class="photo-actions">
+
+      <ion-button
+        expand="block"
+        class="btn-camera"
+        (click)="tomarFoto()">
+
+        <ion-icon name="camera-outline" slot="start"></ion-icon>
+
+        Tomar foto
+
+      </ion-button>
+
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        class="btn-gallery"
+        (click)="galeria()">
+
+        <ion-icon name="images-outline" slot="start"></ion-icon>
+
+        Galería
+
+      </ion-button>
+
+
+      <ion-button
+        *ngIf="foto"
+        expand="block"
+        class="btn-delete"
+        (click)="eliminar()">
+
+        <ion-icon name="trash-outline" slot="start"></ion-icon>
+
+        Eliminar foto
+
+      </ion-button>
+
+    </div>
+
+  </ion-card-content>
 
 </ion-card>

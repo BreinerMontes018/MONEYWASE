@@ -1,0 +1,133 @@
+.detalle-content{
+
+  --background:#F4EFF7;
+
+  padding:16px;
+
+}
+
+
+/* tarjeta principal */
+
+.detalle-card{
+
+  border-radius:16px;
+
+  box-shadow:0 6px 14px rgba(0,0,0,0.08);
+
+}
+
+.title-detalle{
+
+  font-size:22px;
+  font-weight:600;
+
+  letter-spacing:0.3px;
+
+  color:#000000;
+
+}
+
+
+/* categoria */
+
+.categoria{
+
+  font-size:18px;
+
+  font-weight:700;
+
+  margin-bottom:6px;
+
+}
+
+
+/* tipo */
+
+.tipo{
+
+  font-size:14px;
+
+  color:#777;
+
+  margin-bottom:10px;
+
+}
+
+
+/* fecha */
+
+.fecha{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  font-size:13px;
+
+  color:#777;
+
+}
+
+
+/* descripcion */
+
+.descripcion{
+
+  margin-top:12px;
+
+}
+
+.descripcion p{
+
+  margin-top:4px;
+
+  font-size:14px;
+
+}
+
+
+/* tarjeta foto */
+
+.foto-card{
+
+  margin-top:16px;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+}
+
+
+/* botones */
+
+.acciones{
+
+  margin-top:20px;
+
+}
+
+.btn-editar{
+
+  --background:#7A3A8E;
+
+  --border-radius:12px;
+
+  height:48px;
+
+}
+
+.btn-eliminar{
+
+  margin-top:10px;
+
+  --background:#D32F2F;
+
+  --border-radius:12px;
+
+  height:48px;
+
+}

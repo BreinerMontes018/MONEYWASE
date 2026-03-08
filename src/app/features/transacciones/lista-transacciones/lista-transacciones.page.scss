@@ -1,3 +1,13 @@
+ion-list{
+
+  padding-top:0 !important;
+
+  margin-top:0 !important;
+
+  background:transparent;
+
+}
+
 .transactions-header{
 
   ion-toolbar{
@@ -17,10 +27,8 @@
 .transactions-title{
 
   font-size:22px;
-  font-weight:800;
-
+  font-weight:600;
   letter-spacing:0.3px;
-
   color:#000000;
 
 }
@@ -42,17 +50,16 @@ ion-content::part(scroll){
 .transactions-list{
 
   background:transparent;
-
-  padding-top:10px;
+  padding-top:2px;
   padding-bottom:90px;
 
 }
 
 app-filter-bar{
 
-  display:block;
+display:block;
 
-  margin:10px 12px 8px 12px;
+margin:10px 12px 0px 12px;
 
 }
 
@@ -83,6 +90,14 @@ ion-fab-button ion-icon{
 
 }
 
+.logout-btn{
+
+  --background:#F8EDFB;
+  --border-radius:10px;
+  width:38px;
+  height:38px;
+
+}
 
 ion-icon{
 

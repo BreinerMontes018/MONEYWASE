@@ -1,23 +1,34 @@
-<ion-header>
+<ion-header class="photo-header">
 
   <ion-toolbar>
 
-    <ion-title>Foto</ion-title>
+    <ion-buttons slot="start">
 
-    <ion-buttons slot="end">
-      <ion-button (click)="cerrar()">
-        Cerrar
+      <ion-button fill="clear" (click)="cerrar()">
+
+        <ion-icon name="chevron-back-outline"></ion-icon>
+
       </ion-button>
+
     </ion-buttons>
+
+    <ion-title>
+      Comprobante
+    </ion-title>
 
   </ion-toolbar>
 
 </ion-header>
 
+
 <ion-content class="photo-container">
 
-  <img
-  *ngFor="let foto of fotos"
-  [src]="foto">
+  <div class="photo-wrapper">
+
+    <img
+      *ngFor="let foto of fotos"
+      [src]="foto">
+
+  </div>
 
 </ion-content>

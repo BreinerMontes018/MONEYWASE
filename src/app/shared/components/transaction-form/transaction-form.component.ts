@@ -29,7 +29,6 @@ export class TransactionFormComponent implements OnInit {
     private transaccionService: TransaccionService,
     private modalCtrl: ModalController,
     private toast: ToastService,
-    private router: Router
   ){
 
     this.form = this.fb.group({
@@ -38,7 +37,7 @@ export class TransactionFormComponent implements OnInit {
 
       categoria: ['', Validators.required],
 
-      monto: [null, [Validators.required, Validators.min(1)]],
+      monto: [null, [Validators.required, Validators.pattern('^[0-9]+$'), Validators.min(1)]],
 
       fecha: [new Date().toISOString(), Validators.required],
 
@@ -70,21 +69,21 @@ export class TransactionFormComponent implements OnInit {
 
   }
 
-cancelar(){
+async cancelar(){
 
   if(this.form.dirty){
 
-    if(confirm('¿Deseas cancelar la creación de la transacción?')){
-      this.router.navigate(['/tabs/transacciones']);
+    const confirm = window.confirm('¿Cancelar la creación de la transacción?');
+
+    if(confirm){
+      this.modalCtrl.dismiss();
     }
 
   }else{
-
-    this.router.navigate(['/tabs/transacciones']);
-
+    this.modalCtrl.dismiss();
   }
 
-} 
+}
 
   guardar(){
 

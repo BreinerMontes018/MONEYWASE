@@ -2,9 +2,15 @@
 
   background:white;
   border-radius:16px;
-  margin:12px 14px;
+  margin:6px 14px;
   padding:12px;
   box-shadow:0 6px 14px rgba(0,0,0,0.05);
+
+}
+
+.transactions-list app-transaction-item:first-child .transaction-item{
+
+  margin-top:4px;
 
 }
 
