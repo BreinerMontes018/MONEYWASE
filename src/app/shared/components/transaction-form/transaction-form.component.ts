@@ -6,6 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { TIPOS_TRANSACCION } from 'src/app/core/constants/tipos-transaccion';
 import { CATEGORIAS } from 'src/app/core/constants/categorias';
 import { ToastService } from 'src/app/core/services/toast';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transaction-form',
@@ -27,7 +28,8 @@ export class TransactionFormComponent implements OnInit {
     private fb: FormBuilder,
     private transaccionService: TransaccionService,
     private modalCtrl: ModalController,
-    private toast: ToastService
+    private toast: ToastService,
+    private router: Router
   ){
 
     this.form = this.fb.group({
@@ -67,6 +69,22 @@ export class TransactionFormComponent implements OnInit {
     }
 
   }
+
+cancelar(){
+
+  if(this.form.dirty){
+
+    if(confirm('¿Deseas cancelar la creación de la transacción?')){
+      this.router.navigate(['/tabs/transacciones']);
+    }
+
+  }else{
+
+    this.router.navigate(['/tabs/transacciones']);
+
+  }
+
+} 
 
   guardar(){
 

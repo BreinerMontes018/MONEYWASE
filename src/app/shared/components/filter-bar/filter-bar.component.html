@@ -1,45 +1,58 @@
-<ion-item>
+<div class="filter-container">
 
-  <ion-segment (ionChange)="tipoChange.emit($any($event.detail.value))">
+  <!-- filtro tipo -->
+
+  <ion-segment
+    class="segment-filter"
+    (ionChange)="tipoChange.emit($any($event.detail.value))">
 
     <ion-segment-button value="todos">
       Todos
     </ion-segment-button>
+
     <ion-segment-button
-  *ngFor="let t of tipos"
-  [value]="t">
+      *ngFor="let t of tipos"
+      [value]="t">
 
-  {{ t | titlecase }}
+      {{ t | titlecase }}
 
-</ion-segment-button>
+    </ion-segment-button>
 
   </ion-segment>
 
-</ion-item>
 
-<ion-item>
+  <!-- categoria -->
 
-  <ion-select
-    placeholder="Categoría"
-    (ionChange)="categoriaChange.emit($any($event.detail.value))">
+  <ion-item lines="none" class="categoria-select">
 
-    <ion-select-option value="todas">
-      Todas
-    </ion-select-option>
+    <ion-select
+      placeholder="Categoría"
+      (ionChange)="categoriaChange.emit($any($event.detail.value))">
 
-    <ion-select-option
-      *ngFor="let c of categorias"
-      [value]="c.nombre">
+      <ion-select-option value="todas">
+        Todas
+      </ion-select-option>
 
-      {{ c.nombre }}
+      <ion-select-option
+        *ngFor="let c of categorias"
+        [value]="c.nombre">
 
-    </ion-select-option>
+        {{ c.nombre }}
 
-  </ion-select>
+      </ion-select-option>
 
-</ion-item>
+    </ion-select>
 
-<ion-searchbar
-  placeholder="Buscar..."
-  (ionInput)="buscarChange.emit($any($event.target.value))">
-</ion-searchbar>
+  </ion-item>
+
+
+  <!-- buscador -->
+
+  <ion-searchbar
+    class="searchbar-filter"
+    placeholder="Buscar transacción..."
+    (ionInput)="buscarChange.emit($any($event.target.value))">
+
+  </ion-searchbar>
+
+</div>

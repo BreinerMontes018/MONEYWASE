@@ -1,29 +1,42 @@
-<ion-header>
+<ion-header class="modal-header">
   <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-button fill="clear" (click)="cancelar()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
     <ion-title>Nueva Transacción</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="transaction-form">
 
 <form [formGroup]="form">
 
-<!-- Tipo de transacción -->
-<ion-item>
-  <ion-label>Tipo</ion-label>
-</ion-item>
+<!-- TARJETA DATOS -->
+<ion-card class="form-card">
+
+<ion-card-content>
+
+<!-- Tipo -->
+<ion-text class="field-title">
+Tipo
+</ion-text>
 
 <ion-segment formControlName="tipo">
 
   <ion-segment-button
-    *ngFor="let t of tipos"
-    [value]="t">
+  *ngFor="let t of tipos"
+  [value]="t">
 
-    <ion-label>{{t}}</ion-label>
+  {{t}}
 
   </ion-segment-button>
 
 </ion-segment>
+
 
 <!-- Categoría -->
 <app-select-field
@@ -42,30 +55,59 @@ type="number"
 (valueChange)="form.get('monto')?.setValue($event)">
 </app-input-field>
 
-<!-- Fecha -->
+</ion-card-content>
+
+</ion-card>
+
+
+<!-- TARJETA FECHA -->
+
+<ion-card class="form-card">
+
+<ion-card-content>
+
+<ion-text class="field-title">
+Fecha
+</ion-text>
+
 <app-date-field
-label="Fecha"
 [value]="form.get('fecha')?.value"
 (valueChange)="form.get('fecha')?.setValue($event)">
 </app-date-field>
 
-<!-- Descripción -->
-<ion-item>
-  <ion-label position="floating">Descripción</ion-label>
-  <ion-textarea
-    formControlName="descripcion">
-  </ion-textarea>
-</ion-item>
+</ion-card-content>
+
+</ion-card>
+
+
+<!-- TARJETA DESCRIPCIÓN -->
+
+<ion-card class="form-card">
+
+<ion-card-content>
+
+<ion-text class="field-title">
+Descripción
+</ion-text>
+
+<ion-textarea
+formControlName="descripcion"
+placeholder="Agregar descripción...">
+</ion-textarea>
+
+</ion-card-content>
+
+</ion-card>
+
 
 <app-photo-selector
 (fotoChange)="foto = $event">
 </app-photo-selector>
 
-<!-- Botón guardar -->
 <ion-button
-  expand="block"
-  color="primary"
-  (click)="guardar()">
+expand="block"
+class="save-button"
+(click)="guardar()">
 
 Guardar Transacción
 

@@ -18,7 +18,7 @@
   font-size:22px;
   font-weight:800;
   letter-spacing:0.3px;
-  color:#522566;
+  color:#000000;
 
 }
 
@@ -41,9 +41,14 @@
 }
 .dashboard-content{
 
-  --background:#F8EDFB;
+  --background: linear-gradient(
+    180deg,
+    #F8EDFB 0%,
+    #F4EFF7 100%
+  );
 
 }
+
 
 .dashboard-container{
 

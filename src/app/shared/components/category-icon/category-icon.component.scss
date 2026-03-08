@@ -1,16 +1,30 @@
-ion-avatar{
+.category-icon{
 display:flex;
 align-items:center;
 justify-content:center;
-background:var(--ion-color-light);
+border-radius:50%;
+box-shadow:0 4px 10px rgba(0,0,0,0.12);
+
 }
 
+/* tamaños */
+
 .small{
-width:32px;
-height:32px;
+width:36px;
+height:36px;
+
 }
 
 .medium{
-width:40px;
-height:40px;
+width:44px;
+height:44px;
+
+}
+
+/* icono */
+
+.category-icon ion-icon{
+    
+font-size:18px;
+
 }

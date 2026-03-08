@@ -1,12 +1,14 @@
-<ion-header>
+<ion-header class="transactions-header">
 
   <ion-toolbar>
 
-    <ion-title>Transacciones</ion-title>
+    <ion-title class="transactions-title">
+      Transacciones
+    </ion-title>
 
     <ion-buttons slot="end">
 
-      <ion-button (click)="logout()">
+      <ion-button class="logout-btn" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
 
@@ -16,7 +18,7 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content class="dashboard-content">
 
   <!-- Barra de filtros -->
 
@@ -26,7 +28,8 @@
 
   <!-- Lista -->
 
-  <ion-list *ngIf="(transacciones$ | async) as transacciones">
+  <ion-list class="transactions-list"
+*ngIf="(transacciones$ | async) as transacciones">
 
     <app-transaction-item *ngFor="
   let t of transacciones
@@ -45,11 +48,16 @@ message="No tienes transacciones aún">
 </app-empty-state>
 
   <!-- Botón agregar -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="abrirFormulario()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <ion-fab-button
+  class="fab-add"
+  (click)="abrirFormulario()">
+
+    <ion-icon name="add"></ion-icon>
+
+  </ion-fab-button>
+
+</ion-fab>
 
 </ion-content>

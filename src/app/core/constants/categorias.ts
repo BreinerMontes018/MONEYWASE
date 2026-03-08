@@ -5,43 +5,43 @@ export const CATEGORIAS: Categoria[] = [
   {
     nombre: 'Alimentación',
     icono: 'restaurant',
-    color: 'danger'
+    color: '#FF6B6B' 
   },
 
   {
     nombre: 'Transporte',
     icono: 'car',
-    color: 'primary'
+    color: '#4D96FF'
   },
 
   {
     nombre: 'Vivienda',
     icono: 'home',
-    color: 'tertiary'
+    color: '#9D4EDD'
   },
 
   {
     nombre: 'Salud',
     icono: 'medkit',
-    color: 'success'
+    color: '#2ECC71'
   },
 
   {
     nombre: 'Ocio',
     icono: 'game-controller',
-    color: 'warning'
+    color: '#F7B801' 
   },
 
   {
     nombre: 'Salario',
     icono: 'cash',
-    color: 'success'
+    color: '#00C897' 
   },
 
   {
     nombre: 'Otros',
     icono: 'apps',
-    color: 'medium'
+    color: '#8E9AAF' 
   }
 
 ];
